@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block titulo %}Marota{% endblock %}
+
+{% block conteudo %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contato in contatos %}
+        <tr>
+            <td scope='row'><a href="{% url 'ver_contato' contato.id %}">{{ contato.nome }}</a></td>
+            <td>{{ contato.sobrenome }}</td>
+            <td>{{ contato.telefone }}</td>
+            <td>{{ contato.categoria }}</td>
+        </tr>
+        
+        {% endfor %}
+        
+    </tbody>
+</table>
+{% endblock %}

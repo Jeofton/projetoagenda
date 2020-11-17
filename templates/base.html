@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% include 'components/_head.html' %}
+    <title>Agenda - {%block titulo%}{%endblock%}</title>
+    
+</head>
+<body>
+    {% include 'components/_navbar.html' %}
+    
+    {%block conteudo%}
+    {%endblock%}
+
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+    
+</body>
+</html>
