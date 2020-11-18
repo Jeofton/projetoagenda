@@ -3,10 +3,10 @@ from django.utils import timezone
 
 #Cada model é uma tabela no banco de dados
 class Categoria(models.Model):
-    nome = models.CharField(max_length=255)
+    tipo = models.CharField(max_length=255)
 
-    def __self__(self):
-        return self.nome
+    def __str__(self):
+        return self.tipo
 
 
 #Os atributos serão as colunas
@@ -18,8 +18,9 @@ class Contato(models.Model):
     data_criacao = models.DateTimeField(default=timezone.now)
     descricao = models.TextField(blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
+    mostrar = models.BooleanField(default=True)
 
-    def __self__(self):
+    def __str__(self):
         return self.nome
 
 
