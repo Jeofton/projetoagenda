@@ -6,12 +6,13 @@
     <title>Agenda - {%block titulo%}{%endblock%}</title>
     
 </head>
-<body>
+<body class="container">
     {% include 'components/_navbar.html' %}
 
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+                {% if 'accounts' not in request.path %}
                 <br><br>
                 <form action="{% url 'busca' %}" method="get">
                     <div class="form-group row">
@@ -21,6 +22,7 @@
                         </div>
                     </div>
                 </form>
+                {% endif %}
             </div>
         </div>
     </div>
